@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Questionário</title>
+</head>
+<body>
+    <h1>Lista de compras</h1>
+
+    <form action="/add_to_cart" method="post">
+        <label for="item">Adicionar a lista de compras:</label>
+        <input type="text" id="item" name="item" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Lista de Compras</h2>
+    <ul>
+        {% for item in cart %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/clear_cart">Limpar Lista de Compras</a>
+</body>
+</html>
